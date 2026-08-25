@@ -173,7 +173,7 @@ export const FloatingTopNav: React.FC<FloatingTopNavProps> = ({
         <button
           id="nav-btn-help"
           type="button"
-          onClick={() => {}}
+          onClick={() => { window.location.href = "https://github.com/hexaredecimal/QuickAnimations"; }}
           title="Go to GitHub Repository"
           className={`p-1.5 rounded-md text-xs border transition-colors ${btnSecondary}`}
         >

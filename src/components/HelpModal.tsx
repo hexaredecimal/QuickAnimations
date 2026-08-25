@@ -49,7 +49,7 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose, themeMode
             </div>
             <div>
               <h3 className="text-sm font-bold">
-                Mixamo & Blender Workflow Guide
+                Help Guide
               </h3>
               <p className="text-[11px] text-neutral-400">
                 Load T-pose FBX, batch merge animations from disk & export unified 3D models
@@ -78,7 +78,7 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose, themeMode
                 Step 1: Open Base FBX Model (T-Pose with Skeleton)
               </h4>
               <p className="text-neutral-400 leading-relaxed text-[11px]">
-                Click <strong>Open FBX</strong> or drop your base character file. In Mixamo or Blender, export your base character with skin in <strong>T-Pose</strong>.
+                Click <strong>Open FBX</strong> or drop your base character file. Make sure your character was exported with skin, in <strong>T-Pose</strong>.
               </p>
             </div>
           </div>
@@ -93,7 +93,7 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose, themeMode
                 Step 2: Add Multiple Animation FBX Files (Mixamo "Without Skin")
               </h4>
               <p className="text-neutral-400 leading-relaxed text-[11px]">
-                In Mixamo, download animations (e.g. <em>Walking</em>, <em>Running</em>, <em>Dancing</em>) with <strong>Skin: Without Skin</strong>. Click <strong>Add Anims (Multi)</strong> or drag & drop multiple files at once. Animations are automatically named after their filenames and retargeted!
+                Add animations <strong>without skin</strong>. Click <strong>Add Anims (Multi)</strong> or drag & drop multiple files at once. Animations are automatically named after their filenames and retargeted!
               </p>
             </div>
           </div>
@@ -105,7 +105,7 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose, themeMode
             </div>
             <div className="flex flex-col gap-0.5">
               <h4 className="text-xs font-bold">
-                Step 3: Edit Animation Names in the Blender Outliner
+                Step 3: Edit Animation Names <strong>(Optional)</strong>
               </h4>
               <p className="text-neutral-400 leading-relaxed text-[11px]">
                 Double-click or click the edit icon on any animation in the left hierarchy tree to customize its name. Custom names are preserved upon export.
@@ -128,14 +128,30 @@ export const HelpModal: React.FC<HelpModalProps> = ({ isOpen, onClose, themeMode
             </div>
           </div>
 
-          {/* Step 5: Multi-Format Export */}
+          {/* Step 5: Preparing Export */}
           <div className="flex items-start gap-3">
             <div className="w-6 h-6 rounded-md bg-[#ea7600] text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5 shadow-sm">
               5
             </div>
             <div className="flex flex-col gap-0.5">
               <h4 className="text-xs font-bold">
-                Step 5: Export to GLB, GLTF, OBJ, USDZ, PLY, STL, JSON
+                Step 5: Prepare for export
+              </h4>
+              <p className="text-neutral-400 leading-relaxed text-[11px]">
+                Before exporting reset your animation to the <strong>T-Pose</strong> and make sure the animation is not playing. 
+                The applications exports the current animation frame as the base pose. This can mess up your animation.  
+              </p>
+            </div>
+          </div>
+
+          {/* Step 5: Multi-Format Export */}
+          <div className="flex items-start gap-3">
+            <div className="w-6 h-6 rounded-md bg-[#ea7600] text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5 shadow-sm">
+              6
+            </div>
+            <div className="flex flex-col gap-0.5">
+              <h4 className="text-xs font-bold">
+                Step 6: Export to GLB, GLTF, OBJ, USDZ, PLY, STL, JSON
               </h4>
               <p className="text-neutral-400 leading-relaxed text-[11px]">
                 Click <strong>Export</strong> in the top-right. Choose <strong>GLB</strong> (binary container with model + skeleton + all merged animations + textures) or any other format for Unity, Unreal Engine, Blender, Godot, Apple AR, or 3D printing.
